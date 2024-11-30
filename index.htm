@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SunClouds</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="heading_container">
+        <div class="heading">
+            <h1>SunClouds</h1>
+        </div>
+    </div>
+    <div class="main">
+        <div class="left">
+            <div class="top">
+                <div class="latitude">
+                    <img src="images/latitude.png" alt="Latitude">
+                    <div class="one">
+                        <p class="lat"></p>
+                        <p>Latitude</p>
+                    </div>
+                </div>
+                <div class="longitude">
+                    <img src="images/longitude.png" alt="longitude">
+                    <div class="one">
+                        <p class="lon"></p>
+                        <p>Longitude</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="down">
+                <div class="pressure">
+                    <img src="images/pressure.png" alt="Pressure">
+                    <div class="one">
+                        <p class="pre"></p>
+                        <p>Pressure</p>
+                    </div>
+                </div>
+                <div class="real_temp">
+                    <img src="images/realtemp.png" alt="Real Temp">
+                    <div class="one">
+                        <p class="real"></p>
+                        <p>Feels Like</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <p class="info">© Powered by Akash</p>
+            <div class="search">
+                <input type="text" placeholder="Enter City Name" spellcheck="false">
+                <button><img src="images/search.png" alt="Search"></button>
+            </div>
+            <div class="error">
+                <img src="images/warning.png" alt="Warning" class="warn">
+                <p>Invalid City Name</p>
+            </div>
+            <div class="weather">
+                <img src="/" class="weather-icon">
+                <h1 class="temp"></h1>
+                <h2 class="city"></h2>
+                <div class="details">
+                    <div class="col">
+                        <img src="images/humidity.png" alt="humidity">
+                        <div>
+                            <p class="humidity"></p>
+                            <p class="desc"></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="images/wind.png" alt="humidity">
+                        <div>
+                            <p class="wind"></p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="temp_details">
+                    <div class="tempDet">
+                        <img src="images/high-temperature.png" alt="temp max">
+                        <div>
+                            <p class="temp1"></p>
+                            <p>High Temperature</p>
+                        </div>
+                    </div>
+                    <div class="tempDet">
+                        <img src="images/low-temperature.png" alt="temp min">
+                        <div>
+                            <p class="temp2"></p>
+                            <p>Low Temperature</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="sunrise">
+                    <img src="images/sunrise.png" alt="Sunrise">
+                    <div class="one">
+                        <p class="rise"></p>
+                        <p>Sunrise</p>
+                    </div>
+                </div>
+                <div class="sunset">
+                    <img src="images/sunsets.png" alt="Sunset">
+                    <div class="one">
+                        <p class="set"></p>
+                        <p>Sunset</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="down">
+                <div class="visibility">
+                    <img src="images/visibility.png" alt="Visibility">
+                    <div class="one">
+                        <p class="viz"></p>
+                        <p>Visibility</p>
+                    </div>
+                </div>
+                <div class="country_icon">
+                    <img class="country" alt="Country Flag">
+                    <div class="one">
+                        <p class="ctr"></p>
+                        <p>Country</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

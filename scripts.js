@@ -24,7 +24,6 @@ const country = document.querySelector(".country");
 const country_name = document.querySelector(".ctr");
 
 async function checkWeather(city) {
-    // Add timestamp to bypass cache
     const response = await fetch(`${ApiUrl}${city}&t=${Date.now()}`);
 
     if (response.status == 404) {
@@ -39,7 +38,7 @@ async function checkWeather(city) {
         humidity.innerHTML = data.main.humidity + "%";
         desc.innerHTML = data.weather[0].main;
         wind.innerHTML = data.wind.speed + " km/h";
-        console.log(data);
+        // console.log(data);
         high.innerHTML = data.main.temp_max + "°C";
         low.innerHTML = data.main.temp_min + "°C";
 

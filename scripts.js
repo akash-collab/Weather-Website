@@ -1,5 +1,4 @@
-const ApiKey = "91096373e65ca283eb29601b6f57e7aa";
-const ApiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const ApiUrl = "/api/weather?city=";
 let cityname = document.querySelector(".city");
 let temp = document.querySelector(".temp");
 let humidity = document.querySelector(".humidity");
@@ -25,7 +24,7 @@ const country = document.querySelector(".country");
 const country_name = document.querySelector(".ctr");
 
 async function checkWeather(city) {
-    const response = await fetch(ApiUrl + city + `&appid=${ApiKey}`);
+    const response = await fetch(ApiUrl + city);
     if (response.status == 404) {
         error.style.display = "block";
         weather.style.display = "none";
@@ -33,8 +32,6 @@ async function checkWeather(city) {
         left.style.visibility = "hidden";
     } else {
         let data = await response.json();
-
-
         cityname.innerHTML = data.name;
         temp.innerHTML = Math.round(data.main.temp) + "°C";
         humidity.innerHTML = data.main.humidity + "%";

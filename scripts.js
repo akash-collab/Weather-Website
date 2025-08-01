@@ -6,7 +6,7 @@ let desc = document.querySelector(".desc");
 let wind = document.querySelector(".wind");
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
-const weatherIcon = document.querySelector(".weather-icon")
+const weatherIcon = document.querySelector(".weather-icon");
 const weather = document.querySelector(".weather");
 const error = document.querySelector(".error");
 const high = document.querySelector(".temp1");
@@ -24,7 +24,9 @@ const country = document.querySelector(".country");
 const country_name = document.querySelector(".ctr");
 
 async function checkWeather(city) {
-    const response = await fetch(ApiUrl + city);
+    // Add timestamp to bypass cache
+    const response = await fetch(`${ApiUrl}${city}&t=${Date.now()}`);
+
     if (response.status == 404) {
         error.style.display = "block";
         weather.style.display = "none";
@@ -41,18 +43,17 @@ async function checkWeather(city) {
         high.innerHTML = data.main.temp_max + "°C";
         low.innerHTML = data.main.temp_min + "°C";
 
-        if (data.weather[0].main == "Clouds") {
+        if (data.weather[0].main === "Clouds") {
             weatherIcon.src = "images/clouds.png";
-        } else if (data.weather[0].main == "Clear") {
+        } else if (data.weather[0].main === "Clear") {
             weatherIcon.src = "images/clear.png";
-        } else if (data.weather[0].main == "Rain") {
+        } else if (data.weather[0].main === "Rain") {
             weatherIcon.src = "images/rain.png";
-        }
-        else if (data.weather[0].main == "Drizzle") {
+        } else if (data.weather[0].main === "Drizzle") {
             weatherIcon.src = "images/drizzle.png";
-        } else if (data.weather[0].main == "Mist") {
+        } else if (data.weather[0].main === "Mist") {
             weatherIcon.src = "images/mist.png";
-        } else if (data.weather[0].main == "Snow") {
+        } else if (data.weather[0].main === "Snow") {
             weatherIcon.src = "images/snow.png";
         }
 
@@ -61,19 +62,18 @@ async function checkWeather(city) {
 
         pressure.innerHTML = data.main.pressure + "Pa";
         real_temp.innerHTML = Math.round(data.main.feels_like) + "°C";
-        function convertUnixToTime(unixTimestamp) {
 
+        function convertUnixToTime(unixTimestamp) {
             const date = new Date(unixTimestamp * 1000);
             const hours = date.getHours();
             const minutes = date.getMinutes();
             const formattedTime = `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')} ${hours >= 12 ? 'PM' : 'AM'}`;
-
             return formattedTime;
         }
+
         sunrise.innerHTML = convertUnixToTime(data.sys.sunrise);
         sunset.innerHTML = convertUnixToTime(data.sys.sunset);
-
-        visibility.innerHTML = (data.visibility) / 1000 + " km";
+        visibility.innerHTML = (data.visibility / 1000) + " km";
 
         const countryCode = data.sys.country;
         const flagUrl = `https://flagsapi.com/${countryCode}/flat/64.png`;
@@ -85,8 +85,8 @@ async function checkWeather(city) {
         weather.style.display = "block";
         error.style.display = "none";
     }
-
 }
+
 searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value);
 });

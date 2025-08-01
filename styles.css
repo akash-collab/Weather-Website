@@ -211,3 +211,101 @@ body {
     font-weight: 300;
     text-align: center;
 }
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .heading h1 {
+        font-size: 2.2rem;
+    }
+
+    .card {
+        width: 100%;
+        margin: 50px 0 0;
+        padding: 20px 15px 35px;
+    }
+
+    .weather h1 {
+        font-size: 60px;
+    }
+
+    .weather h2 {
+        font-size: 35px;
+    }
+
+    .details,
+    .temp_details {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .col img,
+    .tempDet img {
+        width: 35px;
+    }
+
+    .humidity,
+    .wind,
+    .temp1,
+    .temp2 {
+        font-size: 24px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+    }
+
+    .top,
+    .down {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .lat,
+    .lon,
+    .rise,
+    .set,
+    .real,
+    .pre,
+    .viz,
+    .ctr {
+        font-size: 22px;
+    }
+
+    .latitude img,
+    .longitude img,
+    .sunrise img,
+    .sunset img,
+    .pressure img,
+    .real_temp img,
+    .visibility img,
+    .weather_icon img {
+        width: 40px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .search input {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .search button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .search button img {
+        width: 14px;
+    }
+}

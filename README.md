@@ -63,9 +63,6 @@ Weather-Website/
    - Get your API key
    - Add it to the JavaScript file where the API call is made.
 
-## 📌 Tags
-`weather` `javascript` `html` `css` `api` `openweathermap` `frontend` `vanillajs`
-
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

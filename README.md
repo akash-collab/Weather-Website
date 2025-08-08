@@ -41,7 +41,7 @@ Weather-Website/
 ![Weather App Home](assets/screenshot1.png)
 
 **Weather Data Example**
-![Weather App Results](assets/screenshot2.jpeg)
+![Weather App Results](assets/screenshot2.png)
 
 ## 📦 Installation & Usage
 
